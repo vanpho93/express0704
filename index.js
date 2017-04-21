@@ -26,6 +26,11 @@ app.get('/chao/:ten/:tuoi', (req, res) => {
     ${tuoi} tuoi!`);
 });
 
+app.get('/tinh/:tenPhepTinh/:soA/:soB', (req, res) => {
+    const { tenPhepTinh, soA, soB } = req.params;
+    const pt = new PhepTinh(soA, soB, tenPhepTinh);
+    res.send(pt.show());
+});
 // app.get('/chao/')
 
 //http://localhost:3000/tinh/cong/4/5
